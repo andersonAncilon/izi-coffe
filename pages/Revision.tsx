@@ -53,7 +53,7 @@ export default function Revision({ orderNumber }: any) {
                     </Card.Header>
                     <Card.Body css={{ py: "$2" }}>
                         <Text>
-                            Make beautiful websites regardless of your design experience.
+                            Revise seu pedido antes de dar prosseguimento.
                         </Text>
                     </Card.Body>
                     <Card.Footer>

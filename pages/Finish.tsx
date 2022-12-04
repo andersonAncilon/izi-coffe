@@ -5,7 +5,7 @@ export default function Finish() {
     const [order, setOrder] = useState("")
 
     useEffect(() => {
-        setOrder(localStorage.getItem("order"))
+        setOrder(localStorage.getItem("order") || "")
     }, [])
 
     return (

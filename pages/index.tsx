@@ -21,11 +21,11 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ products }) {
-  const [user, setUser] = useState()
+export default function Home({ products }: any) {
+  const [user, setUser] = useState<any>()
 
   useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("user")))
+    setUser(JSON.parse(localStorage.getItem("user") || ""))
   }, [])
   return (
     <Container fluid>
@@ -43,7 +43,7 @@ export default function Home({ products }) {
       </Row>
       <Grid.Container gap={0} justify="center" alignContent="center" css={{ marginTop: "1.5rem" }}>
         {
-          products.map(({ id, name, value, image }) => <ProductCard key={id} id={id} name={name} image={image} value={value} />)
+          products.map(({ id, name, value, image }: any) => <ProductCard key={id} id={id} name={name} image={image} value={value} />)
         }
       </Grid.Container>
     </Container>

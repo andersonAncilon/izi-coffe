@@ -5,7 +5,7 @@ import { GetStaticPaths } from 'next';
 import { Button, Card, Col, Container, Grid, Link, Row, Text } from '@nextui-org/react';
 import { useState } from 'react';
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context: any) => {
     const { data } = await client.query({
         query: gql`
       query MyQuery {
@@ -22,16 +22,16 @@ export const getServerSideProps = async (context) => {
     }
 };
 
-export default function ProductDetail({ product: { id, name, fullDescription, image, value } }) {
+export default function ProductDetail({ product: { id, name, fullDescription, image, value } }: any) {
     const [quantity, setQuantity] = useState(1)
 
     const handleCartItem = () => {
         const product = { id, name, image, value, quantity }
-        let cart = localStorage.getItem("cart")
+        let cart: any = localStorage.getItem("cart")
         if (!cart) return localStorage.setItem("cart", JSON.stringify([product]))
         cart = JSON.parse(cart)
-        cart = [...cart, product]
-        localStorage.setItem("cart", JSON.stringify(cart))
+        let newCart = [...cart, product]
+        localStorage.setItem("cart", JSON.stringify(newCart))
     }
 
     const handleSetItem = (value: number) => {

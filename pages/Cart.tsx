@@ -33,7 +33,7 @@ export default function Cart() {
     }
 
     const calculate = () => {
-        return cart.reduce((ac, item) => ac + item.quantity * parseFloat(item.value), 0)
+        return cart.reduce((ac, item: any) => ac + item.quantity * parseFloat(item.value), 0)
     }
 
     const handleAuthentication = () => {
@@ -44,7 +44,7 @@ export default function Cart() {
 
     useEffect(() => {
         // Perform localStorage action
-        setCart(JSON.parse(localStorage.getItem("cart")))
+        setCart(JSON.parse(localStorage.getItem("cart") || ""))
         console.log(cart)
     }, [])
 
@@ -125,7 +125,7 @@ export default function Cart() {
                 </Modal.Footer>
             </Modal>
             {
-                cart.map((item, index) => (
+                cart.map((item: any, index) => (
                     <Grid xs={16} sm={2} key={index} css={{ margin: "0.5rem" }}>
                         <Card isPressable>
                             <Card.Body css={{ p: 0 }}>

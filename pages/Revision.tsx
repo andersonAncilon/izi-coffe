@@ -11,16 +11,16 @@ export function getStaticProps() {
     }
 }
 
-export default function Revision({ orderNumber }) {
+export default function Revision({ orderNumber }: any) {
     const [cart, setCart] = useState([])
 
     const calculate = () => {
-        return cart.reduce((ac, item) => ac + item.quantity * parseFloat(item.value), 0)
+        return cart.reduce((ac, item: any) => ac + item.quantity * parseFloat(item.value), 0)
     }
 
     useEffect(() => {
         // Perform localStorage action
-        setCart(JSON.parse(localStorage.getItem("cart")))
+        setCart(JSON.parse(localStorage.getItem("cart") || ""))
         localStorage.setItem("order", orderNumber)
         console.log(cart)
     }, [])

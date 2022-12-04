@@ -17,7 +17,7 @@ export default function Register() {
     const [confirmationPassword, setConfirmationPassword] = useState("")
     const [register, { data, loading, error }] = useMutation(REGISTER);
 
-    const validateEmail = (value) => {
+    const validateEmail = (value: string) => {
         return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
     };
 

@@ -4,7 +4,6 @@ import Link from 'next/link'
 export interface ProductCardProps {
     id: number;
     name: string;
-    description: string;
     image: string;
     value: string;
 }

@@ -43,7 +43,7 @@ export default function Home({ products }) {
       </Row>
       <Grid.Container gap={0} justify="center" alignContent="center" css={{ marginTop: "1.5rem" }}>
         {
-          products.map(({ id, name, value, image }) => <ProductCard id={id} name={name} image={image} value={value} />)
+          products.map(({ id, name, value, image }) => <ProductCard key={id} id={id} name={name} image={image} value={value} />)
         }
       </Grid.Container>
     </Container>

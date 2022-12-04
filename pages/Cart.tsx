@@ -3,8 +3,8 @@ import { Button, Card, Checkbox, Grid, Input, Link, Loading, Modal, Row, Text } 
 import Router, { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import client from "../apollo-client";
-import { Mail } from "./components/Mail";
-import { Password } from "./components/Password";
+import { Mail } from "../components/Mail";
+import { Password } from "../components/Password";
 
 
 export default function Cart() {

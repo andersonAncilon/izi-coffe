@@ -1,5 +1,5 @@
 import { Container, Avatar, Text, Row, Input, Grid } from "@nextui-org/react";
-import { ProductCard } from "./components/ProductCard";
+import { ProductCard } from "../components/ProductCard";
 import { ApolloClient, ApolloProvider, gql } from "@apollo/client";
 import client from "../apollo-client";
 import { useEffect, useState } from "react";

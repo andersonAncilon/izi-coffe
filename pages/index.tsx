@@ -25,7 +25,13 @@ export default function Home({ products }: any) {
   const [user, setUser] = useState<any>()
 
   useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("user") || ""))
+    try {
+      setUser(JSON.parse(localStorage.getItem("user") || ""))
+    }
+    catch (error) {
+
+    }
+
   }, [])
   return (
     <Container fluid>

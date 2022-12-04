@@ -20,7 +20,12 @@ export default function Revision({ orderNumber }: any) {
 
     useEffect(() => {
         // Perform localStorage action
-        setCart(JSON.parse(localStorage.getItem("cart") || ""))
+        try {
+            setCart(JSON.parse(localStorage.getItem("cart") || ""))
+        } catch (error) {
+
+        }
+
         localStorage.setItem("order", orderNumber)
         console.log(cart)
     }, [])

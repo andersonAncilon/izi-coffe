@@ -5,7 +5,12 @@ export default function Finish() {
     const [order, setOrder] = useState("")
 
     useEffect(() => {
-        setOrder(localStorage.getItem("order") || "")
+        try {
+            setOrder(localStorage.getItem("order") || "")
+        } catch (error) {
+
+        }
+
     }, [])
 
     return (

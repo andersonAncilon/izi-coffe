@@ -44,7 +44,12 @@ export default function Cart() {
 
     useEffect(() => {
         // Perform localStorage action
-        setCart(JSON.parse(localStorage.getItem("cart") || ""))
+        try {
+            setCart(JSON.parse(localStorage.getItem("cart") || ""))
+        } catch (error) {
+
+        }
+
         console.log(cart)
     }, [])
 
